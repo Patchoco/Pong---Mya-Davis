@@ -38,9 +38,5 @@ public class BallPhysics : MonoBehaviour
             collision.rigidbody.AddForce(direction * thrust, ForceMode2D.Force);
 //            collision.rigidbody.AddForce(velocity / 10, ForceMode2D.VelocityChange);
         }
-        if(collision.gameObject.tag == "out_of_bounds")
-        {
-            Destroy(this.gameObject);
-        }
     }
 }

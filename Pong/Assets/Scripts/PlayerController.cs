@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     float vertical;
     float horizontal;
 
+
     private Vector2 zero;
     public float slideSpeed = 5.0f;
 
@@ -28,6 +29,16 @@ public class PlayerController : MonoBehaviour
         velocity.x = Input.GetAxisRaw("Horizontal") * slideSpeed;
         velocity.y = Input.GetAxisRaw("Vertical") * slideSpeed;
         myRB.velocity = velocity;
+
+        var pos = transform.position;
+
+        pos.x = Mathf.Clamp(pos.x + horizontal, -7, -3);
+        pos.y = Mathf.Clamp(pos.y + vertical, -7, 7);
+        transform.position = pos;
+
+
     }
+
+
     
 }
