@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallPhysics : MonoBehaviour
+public class BallPhysic : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -11,8 +11,8 @@ public class BallPhysics : MonoBehaviour
     public GameObject p2;
     public GameObject InstantiateP1Here;
     public GameObject InstantiateP2Here;
+    private GameObject playernewInstance;
 
-    private GameObject newInstance;
     public float thrust = 600.0f;
     public int fragility1 = 0;
     public int fragility2 = 0;
@@ -47,20 +47,20 @@ public class BallPhysics : MonoBehaviour
         {
             Vector2 direction = new Vector2(0, 0);
             collision.rigidbody.AddForce(direction * thrust, ForceMode2D.Force);
-//            collision.rigidbody.AddForce(velocity / 10, ForceMode2D.velocity);
+            //            collision.rigidbody.AddForce(velocity / 10, ForceMode2D.velocity);
         }
 
         else if (contact.point.x < transform.position.x)
         {
             Vector2 direction = new Vector2(0, 0);
             collision.rigidbody.AddForce(direction * thrust, ForceMode2D.Force);
-//            collision.rigidbody.AddForce(velocity / 10, ForceMode2D.VelocityChange);
+            //            collision.rigidbody.AddForce(velocity / 10, ForceMode2D.VelocityChange);
         }
 
-        if(ifFragile == true && collision.gameObject.tag == "player1")
+        if (ifFragile == true && collision.gameObject.tag == "player1")
         {
             fragility1++;
-            if(fragility1 > breaking)
+            if (fragility1 > breaking)
             {
                 Destroy(collision.gameObject);
                 StartCoroutine(waiter());
@@ -86,7 +86,7 @@ public class BallPhysics : MonoBehaviour
     {
         float instX = InstantiateP1Here.transform.position.x;
         float instY = InstantiateP1Here.transform.position.y;
-        newInstance = Instantiate(p1, new Vector2(instX, instY), Quaternion.identity);
+        playernewInstance = Instantiate(p1, new Vector2(instX, instY), Quaternion.identity);
     }
 
 
@@ -94,6 +94,6 @@ public class BallPhysics : MonoBehaviour
     {
         float instX = InstantiateP2Here.transform.position.x;
         float instY = InstantiateP2Here.transform.position.y;
-        newInstance = Instantiate(p2, new Vector2(instX, instY), Quaternion.identity);
+        playernewInstance = Instantiate(p2, new Vector2(instX, instY), Quaternion.identity);
     }
 }
