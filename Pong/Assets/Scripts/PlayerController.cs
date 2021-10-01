@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     float vertical;
     float horizontal;
+    public bool ifEnlargened = false;
+    public bool ifShrunk = false;
 
 
     private Vector2 zero;
@@ -37,8 +39,29 @@ public class PlayerController : MonoBehaviour
         transform.position = pos;
 
 
+        if (ifEnlargened == true)
+        {
+            ItemLarge();
+        }
+
+        if (ifShrunk == true)
+        {
+            ItemSmall();
+        }
+
     }
 
 
-    
+    public void ItemLarge()
+    {
+        Vector2 scale = new Vector2(1, 5);
+        transform.localScale = scale;
+    }
+
+    public void ItemSmall()
+    {
+        Vector2 scale = new Vector2(1, 1);
+        transform.localScale = scale;
+    }
+
 }

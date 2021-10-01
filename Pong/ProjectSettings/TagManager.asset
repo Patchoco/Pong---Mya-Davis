@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - out_of_bounds
+  - player1
+  - player2
   layers:
   - Default
   - TransparentFX
