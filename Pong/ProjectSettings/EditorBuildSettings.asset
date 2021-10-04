@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/P1Victory.unity
+    path: Assets/Scenes/Player1Victory.unity
     guid: b12310fa76e917247bf02c5ba9d001c4
   - enabled: 0
     path: 
