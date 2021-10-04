@@ -18,7 +18,6 @@ public class BallPhysic : MonoBehaviour
     public int fragility2 = 0;
     public int breaking = 5;
     public bool ifFragile = false;
-    public bool ifFake = false;
 
     void Start()
     {

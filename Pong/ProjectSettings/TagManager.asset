@@ -7,6 +7,9 @@ TagManager:
   - out_of_bounds
   - player1
   - player2
+  - grow_item
+  - shrink_item
+  - fragile_item
   layers:
   - Default
   - TransparentFX
