@@ -33,7 +33,7 @@ public class BallPhysic : MonoBehaviour
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
