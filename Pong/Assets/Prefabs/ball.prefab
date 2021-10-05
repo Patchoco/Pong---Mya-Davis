@@ -136,8 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 6785859276590983039, guid: 21610f48bb56e0740bf5910816b39968, type: 3}
   p2: {fileID: 5887523141786732303, guid: c7c3a00fe17a0c44281cca1b679ecde1, type: 3}
-  InstantiateP1Here: {fileID: 0}
-  InstantiateP2Here: {fileID: 0}
   thrust: 600
   fragility1: 0
   fragility2: 0

@@ -152,3 +152,5 @@ MonoBehaviour:
   FragileItem: {fileID: 2010561901151757605}
   bP: {fileID: 0}
   pC: {fileID: 0}
+  sPC: {fileID: 0}
+  iS: {fileID: 0}

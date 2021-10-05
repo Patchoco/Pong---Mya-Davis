@@ -93,7 +93,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5887523141786732303}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf87d18adb982474aa5e0ee8b1006bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
-  moveSpeed: 20
+  ball: {fileID: 7589425703386987941, guid: 851ec62ff4346064fb5893487dfd8ff2, type: 3}
+  moveSpeed: 1
   lerpSpeed: 1
+  ifEnlargened: 0
+  ifShrunk: 0
