@@ -59,6 +59,7 @@ public class SecondPlayerController : MonoBehaviour
         {
             ItemLarge();
             ifShrunk = false;
+
         }
 
         if (ifShrunk == true)

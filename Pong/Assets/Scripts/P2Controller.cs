@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class P2Controller : MonoBehaviour
 {
-
+    //player 2 controller, not ai
 
     Rigidbody2D myRB;
 

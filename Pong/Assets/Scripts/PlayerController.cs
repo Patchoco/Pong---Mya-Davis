@@ -22,6 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         myRB = GetComponent<Rigidbody2D>();
         zero = new Vector2(0, 0);
+        StartCoroutine(waiter());
+    }
+    ;
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(5);
     }
 
     // Update is called once per frame
@@ -39,16 +45,21 @@ public class PlayerController : MonoBehaviour
         transform.position = pos;
 
 
+
+
         if (ifEnlargened == true)
         {
-            ItemLarge();
             ifShrunk = false;
+            ItemLarge();
+
+
         }
 
         if (ifShrunk == true)
         {
-            ItemSmall();
             ifEnlargened = false;
+            ItemSmall();
+
         }
 
     }
@@ -58,12 +69,16 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 scale = new Vector2(1, 5);
         transform.localScale = scale;
+        StartCoroutine(waiter());
+        ifEnlargened = false;
     }
 
     public void ItemSmall()
     {
         Vector2 scale = new Vector2(1, 1);
         transform.localScale = scale;
+        StartCoroutine(waiter());
+        ifShrunk = false;
     }
 
 }

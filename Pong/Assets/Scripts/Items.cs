@@ -10,6 +10,7 @@ public class Items : MonoBehaviour
     public BallPhysic bP;
     public PlayerController pC;
     public SecondPlayerController sPC;
+    public ItemSpawn iS;
 
 
     // Start is called before the first frame update
