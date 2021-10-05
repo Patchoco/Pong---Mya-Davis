@@ -42,11 +42,13 @@ public class PlayerController : MonoBehaviour
         if (ifEnlargened == true)
         {
             ItemLarge();
+            ifShrunk = false;
         }
 
         if (ifShrunk == true)
         {
             ItemSmall();
+            ifEnlargened = false;
         }
 
     }

@@ -10,6 +10,8 @@ public class SecondPlayerController : MonoBehaviour
     public GameObject ball;
     public float moveSpeed = 20.0f;
     public float lerpSpeed = 1f;
+    public bool ifEnlargened = false;
+    public bool ifShrunk = false;
     private Rigidbody2D myRB;
     private Vector2 zero;
 
@@ -53,5 +55,30 @@ public class SecondPlayerController : MonoBehaviour
             }
         }
 
+        if (ifEnlargened == true)
+        {
+            ItemLarge();
+            ifShrunk = false;
+        }
+
+        if (ifShrunk == true)
+        {
+            ItemSmall();
+            ifEnlargened = false;
+        }
+
+    }
+
+
+    public void ItemLarge()
+    {
+        Vector2 scale = new Vector2(1, 5);
+        transform.localScale = scale;
+    }
+
+    public void ItemSmall()
+    {
+        Vector2 scale = new Vector2(1, 1);
+        transform.localScale = scale;
     }
 }

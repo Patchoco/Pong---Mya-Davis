@@ -9,6 +9,7 @@ public class Items : MonoBehaviour
     public GameObject FragileItem;
     public BallPhysic bP;
     public PlayerController pC;
+    public SecondPlayerController sPC;
 
 
     // Start is called before the first frame update
@@ -38,6 +39,28 @@ public class Items : MonoBehaviour
             if (gameObject.tag == "shrink_item")
             {
                 pC.ifShrunk = true;
+                Destroy(this.gameObject);
+            }
+
+            if (gameObject.tag == "fragile_item")
+            {
+                bP.ifFragile = true;
+                Destroy(this.gameObject);
+            }
+        }
+
+        if(collision.tag == "player2")
+        {
+
+            if (gameObject.tag == "grow_item")
+            {
+                sPC.ifEnlargened = true;
+                Destroy(this.gameObject);
+            }
+
+            if (gameObject.tag == "shrink_item")
+            {
+                sPC.ifShrunk = true;
                 Destroy(this.gameObject);
             }
 
