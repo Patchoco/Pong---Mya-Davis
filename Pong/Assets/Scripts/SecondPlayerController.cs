@@ -36,7 +36,7 @@ public class SecondPlayerController : MonoBehaviour
 
         if (ball.transform.position.y > transform.position.y)
         {
-            if (myRB.velocity.y < 0)
+            if (ball.GetComponent<Rigidbody2D>().velocity.y < 0)
             {
                 myRB.velocity = Vector2.zero;
                 myRB.velocity = Vector2.Lerp(myRB.velocity, Vector2.up * moveSpeed, lerpSpeed * Time.deltaTime);

@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         zero = new Vector2(0, 0);
         StartCoroutine(waiter());
     }
-    ;
+
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(5);

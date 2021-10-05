@@ -9,8 +9,6 @@ public class BallPhysic : MonoBehaviour
 
     public GameObject p1;
     public GameObject p2;
-    public GameObject InstantiateP1Here;
-    public GameObject InstantiateP2Here;
     private GameObject playernewInstance;
 
     public float thrust = 600.0f;
@@ -31,9 +29,15 @@ public class BallPhysic : MonoBehaviour
 
     }
 
-    IEnumerator waiter()
+    IEnumerator waiter(bool playerSpawn)
     {
         yield return new WaitForSeconds(5);
+
+        if(playerSpawn)
+            playernewInstance = Instantiate(p1, new Vector2(-5, 0), Quaternion.identity);
+
+        if(!playerSpawn)
+            playernewInstance = Instantiate(p2, new Vector2(5, 0), Quaternion.identity);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -62,8 +66,7 @@ public class BallPhysic : MonoBehaviour
             if (fragility1 > breaking)
             {
                 Destroy(collision.gameObject);
-                StartCoroutine(waiter());
-                CreateP1Prefab();
+                StartCoroutine("waiter", true);
             }
         }
 
@@ -73,26 +76,8 @@ public class BallPhysic : MonoBehaviour
             if (fragility2 > breaking)
             {
                 Destroy(collision.gameObject);
-                StartCoroutine(waiter());
-                CreateP2Prefab();
+                StartCoroutine("waiter", false);
             }
         }
-
-
-    }
-
-    public void CreateP1Prefab()
-    {
-        float instX = InstantiateP1Here.transform.position.x;
-        float instY = InstantiateP1Here.transform.position.y;
-        playernewInstance = Instantiate(p1, new Vector2(instX, instY), Quaternion.identity);
-    }
-
-
-    public void CreateP2Prefab()
-    {
-        float instX = InstantiateP2Here.transform.position.x;
-        float instY = InstantiateP2Here.transform.position.y;
-        playernewInstance = Instantiate(p2, new Vector2(instX, instY), Quaternion.identity);
     }
 }
