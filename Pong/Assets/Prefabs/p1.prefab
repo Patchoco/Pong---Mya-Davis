@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ad169443c5d584c8d1f5fef55d5fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ifEnlargened: 0
+  ifEnlargened: 1
   ifShrunk: 0
   slideSpeed: 9
 --- !u!61 &6785859276590983033
@@ -146,4 +146,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5

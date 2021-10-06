@@ -19,10 +19,21 @@ public class OutOfBounds : MonoBehaviour
         
     }
 
+    IEnumerator waiter(bool Goal)
+    {
+        yield return new WaitForSeconds(5);
+
+        if(Goal)
+        {
+            CreatePrefab();
+        }
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(collision.gameObject);
-        CreatePrefab();
+        StartCoroutine("waiter", true);
     }
 
     public void CreatePrefab()

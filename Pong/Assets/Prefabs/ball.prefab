@@ -140,4 +140,4 @@ MonoBehaviour:
   fragility1: 0
   fragility2: 0
   breaking: 5
-  ifFragile: 0
+  ifFragile: 1
