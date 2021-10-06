@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class P2ScoreKeeper : MonoBehaviour
 {
     public GameObject ball;
+    public Text ScoreText;
 
     public int Player2_Score = 0;
 
@@ -23,6 +25,7 @@ public class P2ScoreKeeper : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player2_Score++;
+        ScoreText.text = Player2_Score.ToString();
         if(Player2_Score == 7)
         {
             p2gameover();
