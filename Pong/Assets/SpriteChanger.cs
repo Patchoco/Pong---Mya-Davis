@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpriteChanger : MonoBehaviour
 {
-
     public SpriteRenderer spriteRenderer;
     public Sprite Confident;
     public Sprite Sad;
@@ -14,30 +13,31 @@ public class SpriteChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer.sprite = Neutral;
+        NeutralFace();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
-    void ConfidentFace()
+
+    public void ConfidentFace()
     {
         spriteRenderer.sprite = Confident;
 
-        NeutralFace();
+//        NeutralFace();
     }
 
-    void SadFace()
+    public void SadFace()
     {
         spriteRenderer.sprite = Sad;
-        NeutralFace();
+ //       NeutralFace();
     }
 
-    void NeutralFace()
+    public void NeutralFace()
     {
         spriteRenderer.sprite = Neutral;
     }
