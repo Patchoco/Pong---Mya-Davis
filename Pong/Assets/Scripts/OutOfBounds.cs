@@ -5,6 +5,8 @@ using UnityEngine;
 public class OutOfBounds : MonoBehaviour
 {
     public GameObject ball;
+    public SpriteChanger Rouge;
+    public SpriteChanger Saxon;
     public GameObject InstantiateObjectHere;
     private GameObject newInstance;
     // Start is called before the first frame update
@@ -26,6 +28,8 @@ public class OutOfBounds : MonoBehaviour
         if(Goal)
         {
             CreatePrefab();
+            Rouge.GetComponent<SpriteChanger>().NeutralFace();
+            Saxon.GetComponent<SpriteChanger>().NeutralFace();
         }
 
     }

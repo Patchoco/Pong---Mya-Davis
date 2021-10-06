@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 151786207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.48, y: 0, z: 0}
-  m_LocalScale: {x: 6.86139, y: 9.792086, z: 1}
+  m_LocalScale: {x: 6.86139, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -444,6 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 352693186}
   - component: {fileID: 352693185}
+  - component: {fileID: 352693187}
   m_Layer: 0
   m_Name: 'Rouge '
   m_TagString: Untagged
@@ -491,8 +492,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 7dbcd3ecc2067854a95cb4e391c8fb49, type: 3}
-  m_Color: {r: 1, g: 0.41037738, b: 0.41037738, a: 1}
+  m_Sprite: {fileID: 6618101735025683000, guid: 851bad8e3a76dd748906c92377e8611e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -511,11 +512,27 @@ Transform:
   m_GameObject: {fileID: 352693184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7, y: -3.8, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352693187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352693184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c03eb3b74af8d345bd4d3a75a565b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 352693185}
+  Confident: {fileID: -1304359301635856953, guid: 851bad8e3a76dd748906c92377e8611e, type: 3}
+  Sad: {fileID: -8573597599366771218, guid: 851bad8e3a76dd748906c92377e8611e, type: 3}
+  Neutral: {fileID: 6618101735025683000, guid: 851bad8e3a76dd748906c92377e8611e, type: 3}
 --- !u!1 &385002598
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 204.1, y: 157}
+  m_AnchoredPosition: {x: 153, y: 113}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396390796
@@ -705,7 +722,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 9e5dbf126fd4cba489cbd0ffb5630a6e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -767,7 +784,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4745098, g: 0.19215688, b: 0.28405604, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -848,7 +865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55.2, y: 168.4}
+  m_AnchoredPosition: {x: -6, y: 113}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537478162
@@ -872,7 +889,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 9e5dbf126fd4cba489cbd0ffb5630a6e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -970,7 +987,7 @@ Transform:
   m_GameObject: {fileID: 681995782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.48, y: 0, z: 0}
-  m_LocalScale: {x: 6.86139, y: 9.792086, z: 1}
+  m_LocalScale: {x: 6.86139, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1099,6 +1116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 7589425703386987941, guid: 851ec62ff4346064fb5893487dfd8ff2, type: 3}
+  Rouge: {fileID: 352693187}
+  Saxon: {fileID: 1729086575}
   InstantiateObjectHere: {fileID: 2120393441}
 --- !u!114 &692922613
 MonoBehaviour:
@@ -1113,6 +1132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 7589425703386987941, guid: 851ec62ff4346064fb5893487dfd8ff2, type: 3}
+  RougeFaceTrigger: {fileID: 352693187}
+  SaxonFaceTrigger: {fileID: 1729086575}
   ScoreText: {fileID: 537478162}
   Player1_Score: 0
 --- !u!114 &771919047 stripped
@@ -1312,6 +1333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729086574}
   - component: {fileID: 1729086573}
+  - component: {fileID: 1729086575}
   m_Layer: 0
   m_Name: Saxon
   m_TagString: Untagged
@@ -1359,8 +1381,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 7dbcd3ecc2067854a95cb4e391c8fb49, type: 3}
-  m_Color: {r: 0.2783019, g: 0.8603827, b: 1, a: 1}
+  m_Sprite: {fileID: -5008204143099689925, guid: dd8e19b303b44174aa897f8dd0904994, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1379,11 +1401,27 @@ Transform:
   m_GameObject: {fileID: 1729086572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7, y: 3.8, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1729086575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729086572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c03eb3b74af8d345bd4d3a75a565b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1729086573}
+  Confident: {fileID: 582750614414805988, guid: dd8e19b303b44174aa897f8dd0904994, type: 3}
+  Sad: {fileID: -5444883975093186102, guid: dd8e19b303b44174aa897f8dd0904994, type: 3}
+  Neutral: {fileID: -5008204143099689925, guid: dd8e19b303b44174aa897f8dd0904994, type: 3}
 --- !u!1 &1908078359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 7589425703386987941, guid: 851ec62ff4346064fb5893487dfd8ff2, type: 3}
+  Rouge: {fileID: 352693187}
+  Saxon: {fileID: 1729086575}
   InstantiateObjectHere: {fileID: 2120393441}
 --- !u!114 &2064246977
 MonoBehaviour:
@@ -1569,6 +1609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 156419391}
+  RougeFaceTrigger: {fileID: 352693187}
+  SaxonFaceTrigger: {fileID: 1729086575}
   ScoreText: {fileID: 396390796}
   Player2_Score: 0
 --- !u!1 &2120393441 stripped
