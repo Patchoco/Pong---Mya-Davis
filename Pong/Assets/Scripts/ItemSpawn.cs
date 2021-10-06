@@ -12,7 +12,6 @@ public class ItemSpawn : MonoBehaviour
     private GameObject newShrinkInstance;
     private GameObject newGrowthInstance;
     private GameObject newFragileInstance;
-    public bool item_present = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,24 +24,9 @@ public class ItemSpawn : MonoBehaviour
         
     }
 
-    IEnumerator waiter(bool item_usage)
-    {
-        yield return new WaitForSeconds(5);
-
-        if(item_usage, true && item_present, false)
-        {
-            CreateShrinkPrefab();
-        }
-    }
     
-    public void CreateItem ()
-    {
-        CreateShrinkPrefab();
-        
-    }
     public void CreateShrinkPrefab()
     {
-        item_present = true;
         float instX = ItemHolder.transform.position.x;
         float instY = ItemHolder.transform.position.y;
         newShrinkInstance = Instantiate(Shrink, new Vector2(instX, instY), Quaternion.identity);

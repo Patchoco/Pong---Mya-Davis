@@ -67,6 +67,7 @@ public class BallPhysic : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 StartCoroutine("waiter", true);
+                ifFragile = false;
             }
         }
 
@@ -77,6 +78,7 @@ public class BallPhysic : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 StartCoroutine("waiter", false);
+                ifFragile = false;
             }
         }
     }
