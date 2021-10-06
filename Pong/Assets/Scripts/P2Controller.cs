@@ -33,13 +33,35 @@ public class P2Controller : MonoBehaviour
     void Update()
     {
         Vector2 velocity = myRB.velocity;
-        velocity.x = Input.GetAxisRaw("Horizontal") * slideSpeed;
-        velocity.y = Input.GetAxisRaw("Vertical") * slideSpeed;
+
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Translate(Vector2.up * slideSpeed * Time.deltaTime);
+        }
+
+        if(Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(Vector2.down * slideSpeed * Time.deltaTime);
+        }
+
+        if(Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector2.left * slideSpeed * Time.deltaTime);
+        }
+
+        if(Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector2.right * slideSpeed * Time.deltaTime);
+        }
+
+
+
+
         myRB.velocity = velocity;
 
         var pos = transform.position;
 
-       pos.x = Mathf.Clamp(pos.x + horizontal, 7, 3);
+       pos.x = Mathf.Clamp(pos.x + horizontal, 3, 7);
        pos.y = Mathf.Clamp(pos.y + vertical, -7, 7);
         transform.position = pos;
 

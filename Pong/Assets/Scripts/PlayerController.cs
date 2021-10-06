@@ -34,9 +34,28 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 velocity = myRB.velocity;
-        velocity.x = Input.GetAxisRaw("Horizontal") * slideSpeed;
-        velocity.y = Input.GetAxisRaw("Vertical") * slideSpeed;
         myRB.velocity = velocity;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector2.up * slideSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector2.down * slideSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector2.left * slideSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector2.right * slideSpeed * Time.deltaTime);
+        }
+
 
         var pos = transform.position;
 

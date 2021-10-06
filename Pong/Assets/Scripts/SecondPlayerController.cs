@@ -30,7 +30,7 @@ public class SecondPlayerController : MonoBehaviour
         var pos = transform.position;
 
 
-        pos.x = Mathf.Clamp(pos.x + horizontal, 7, 3);
+        pos.x = Mathf.Clamp(pos.x + horizontal, 3, 7);
         pos.y = Mathf.Clamp(pos.y + vertical, -7, 7);
         transform.position = pos;
 
