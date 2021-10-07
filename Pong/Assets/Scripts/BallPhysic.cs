@@ -9,6 +9,7 @@ public class BallPhysic : MonoBehaviour
 
     public GameObject p1;
     public GameObject p2;
+    public PlayerRespawn PR;
     private GameObject playernewInstance;
 
     public float thrust = 600.0f;
@@ -29,16 +30,6 @@ public class BallPhysic : MonoBehaviour
 
     }
 
-    IEnumerator waiter(bool playerSpawn)
-    {
-        yield return new WaitForSeconds(2);
-
-        if(playerSpawn)
-            playernewInstance = Instantiate(p1, new Vector2(-5, 0), Quaternion.identity);
-
-        if(!playerSpawn)
-            playernewInstance = Instantiate(p2, new Vector2(5, 0), Quaternion.identity);
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -66,8 +57,10 @@ public class BallPhysic : MonoBehaviour
             if (fragility1 > breaking)
             {
                 Destroy(collision.gameObject);
-                StartCoroutine("waiter", true);
                 ifFragile = false;
+                fragility1 = 0;
+                fragility2 = 0;
+                broken();
             }
         }
 
@@ -77,9 +70,25 @@ public class BallPhysic : MonoBehaviour
             if (fragility2 > breaking)
             {
                 Destroy(collision.gameObject);
-                StartCoroutine("waiter", false);
                 ifFragile = false;
+                broken();
+                fragility1 = 0;
+                fragility2 = 0;
+
             }
+        }
+    }
+
+    public void broken()
+    {
+        if(gameObject.tag == "player2")
+        {
+            PR.GetComponent<PlayerRespawn>().RevivePlayer();
+        }
+
+        if(gameObject.tag == "player1")
+        {
+            PR.GetComponent<PlayerRespawn>().Revive();
         }
     }
 }

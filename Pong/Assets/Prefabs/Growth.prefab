@@ -147,10 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8a1f95293e54c46811b5cbbbea84b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShrinkItem: {fileID: 0}
+  ShrinkItem: {fileID: 6056841777870032749, guid: be5b3287d377b324d8a54b4b647563c7, type: 3}
   GrowItem: {fileID: 4287572811954035260}
   FragileItem: {fileID: 0}
   bP: {fileID: 0}
+  InstantiateItemHere: {fileID: 4287572811954035260}
+  InstantiateSmallHere: {fileID: 6056841777870032749, guid: be5b3287d377b324d8a54b4b647563c7, type: 3}
   pC: {fileID: 0}
   sPC: {fileID: 0}
   iS: {fileID: 0}

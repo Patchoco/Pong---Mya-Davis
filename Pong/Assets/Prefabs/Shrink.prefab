@@ -148,9 +148,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShrinkItem: {fileID: 6056841777870032749}
-  GrowItem: {fileID: 0}
+  GrowItem: {fileID: 4287572811954035260, guid: 5fdb3ffa33cca614c90b2627a5fadcd4, type: 3}
   FragileItem: {fileID: 0}
   bP: {fileID: 0}
+  InstantiateItemHere: {fileID: 4287572811954035260, guid: 5fdb3ffa33cca614c90b2627a5fadcd4, type: 3}
+  InstantiateSmallHere: {fileID: 6056841777870032749}
   pC: {fileID: 0}
   sPC: {fileID: 0}
   iS: {fileID: 0}

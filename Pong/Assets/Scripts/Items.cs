@@ -8,6 +8,9 @@ public class Items : MonoBehaviour
     public GameObject GrowItem;
     public GameObject FragileItem;
     public BallPhysic bP;
+    public GameObject InstantiateItemHere;
+    public GameObject InstantiateSmallHere;
+    private GameObject newInstance;
     public PlayerController pC;
     public P2Controller sPC;
     public ItemSpawn iS;
@@ -25,6 +28,23 @@ public class Items : MonoBehaviour
         
     }
 
+    IEnumerator waiter(bool taken)
+    {
+        yield return new WaitForSeconds(2);
+        if(taken)
+        {
+            float instX = InstantiateItemHere.transform.position.x;
+            float instY = InstantiateItemHere.transform.position.y;
+            newInstance = Instantiate(GrowItem, new Vector2(instX, instY), Quaternion.identity);
+        }
+        if(!taken)
+        {
+            float instX = InstantiateSmallHere.transform.position.x;
+            float instY = InstantiateSmallHere.transform.position.y;
+            newInstance = Instantiate(ShrinkItem, new Vector2(instX, instY), Quaternion.identity);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "player1")
@@ -34,12 +54,14 @@ public class Items : MonoBehaviour
             {
                 pC.ifEnlargened = true;
                 Destroy(this.gameObject);
+                StartCoroutine("waiter", true);
             }
 
             if (gameObject.tag == "shrink_item")
             {
                 sPC.ifShrunk = true;
                 Destroy(this.gameObject);
+                StartCoroutine("waiter", false);
             }
 
             if (gameObject.tag == "fragile_item")
@@ -56,12 +78,15 @@ public class Items : MonoBehaviour
             {
                 sPC.ifEnlargened = true;
                 Destroy(this.gameObject);
+                StartCoroutine("waiter", true);
+
             }
 
             if (gameObject.tag == "shrink_item")
             {
                 pC.ifShrunk = true;
                 Destroy(this.gameObject);
+                StartCoroutine("waiter", false);
             }
 
             if (gameObject.tag == "fragile_item")
