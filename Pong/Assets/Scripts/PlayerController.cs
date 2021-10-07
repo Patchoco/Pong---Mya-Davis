@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     float horizontal;
     float originalWidth = 0.5f;
     float originalHeight = 2f;
+    public AudioClip hit;
+    public AudioClip item;
+    private AudioSource speaker;
 
     public bool ifEnlargened = false;
     public bool ifShrunk = false;
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         myRB = GetComponent<Rigidbody2D>();
         zero = new Vector2(0, 0);
+        speaker = GetComponent<AudioSource>();
     }
 
 
@@ -81,6 +85,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(gameObject.tag == "ball")
+        {
+            speaker.clip = hit;
+            speaker.Play();
+        }
+    }
 
     IEnumerator waiter(bool Waiting)
     {

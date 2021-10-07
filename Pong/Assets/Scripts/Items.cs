@@ -14,12 +14,14 @@ public class Items : MonoBehaviour
     public PlayerController pC;
     public P2Controller sPC;
     public ItemSpawn iS;
+    public AudioSource speaker;
+    public AudioClip itemget;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        speaker.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,22 +30,6 @@ public class Items : MonoBehaviour
         
     }
 
-    IEnumerator waiter(bool taken)
-    {
-        yield return new WaitForSeconds(2);
-        if(taken)
-        {
-            float instX = InstantiateItemHere.transform.position.x;
-            float instY = InstantiateItemHere.transform.position.y;
-            newInstance = Instantiate(GrowItem, new Vector2(instX, instY), Quaternion.identity);
-        }
-        if(!taken)
-        {
-            float instX = InstantiateSmallHere.transform.position.x;
-            float instY = InstantiateSmallHere.transform.position.y;
-            newInstance = Instantiate(ShrinkItem, new Vector2(instX, instY), Quaternion.identity);
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -52,16 +38,20 @@ public class Items : MonoBehaviour
 
             if (gameObject.tag == "grow_item")
             {
+                speaker.clip = itemget;
+                speaker.Play();
                 pC.ifEnlargened = true;
                 Destroy(this.gameObject);
-                StartCoroutine("waiter", true);
+     //           StartCoroutine("waiter", true);
             }
 
             if (gameObject.tag == "shrink_item")
             {
+                speaker.clip = itemget;
+                speaker.Play();
                 sPC.ifShrunk = true;
                 Destroy(this.gameObject);
-                StartCoroutine("waiter", false);
+      //          StartCoroutine("waiter", false);
             }
 
             if (gameObject.tag == "fragile_item")
@@ -76,17 +66,21 @@ public class Items : MonoBehaviour
 
             if (gameObject.tag == "grow_item")
             {
+                speaker.clip = itemget;
+                speaker.Play();
                 sPC.ifEnlargened = true;
                 Destroy(this.gameObject);
-                StartCoroutine("waiter", true);
+    //            StartCoroutine("waiter", true);
 
             }
 
             if (gameObject.tag == "shrink_item")
             {
+                speaker.clip = itemget;
+                speaker.Play();
                 pC.ifShrunk = true;
                 Destroy(this.gameObject);
-                StartCoroutine("waiter", false);
+     //           StartCoroutine("waiter", false);
             }
 
             if (gameObject.tag == "fragile_item")

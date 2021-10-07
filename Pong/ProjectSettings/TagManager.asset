@@ -10,6 +10,7 @@ TagManager:
   - grow_item
   - shrink_item
   - fragile_item
+  - ball
   layers:
   - Default
   - TransparentFX

@@ -8,11 +8,13 @@ public class OutOfBounds : MonoBehaviour
     public SpriteChanger Rouge;
     public SpriteChanger Saxon;
     public GameObject InstantiateObjectHere;
+    public AudioClip goall;
+    public AudioSource speaker;
     private GameObject newInstance;
     // Start is called before the first frame update
     void Start()
     {
-        
+        speaker.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,10 @@ public class OutOfBounds : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(collision.gameObject);
+
+        speaker.clip = goall;
+        speaker.Play();
+
         StartCoroutine("waiter", true);
     }
 
