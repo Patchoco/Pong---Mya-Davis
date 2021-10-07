@@ -6,12 +6,15 @@ public class ItemSpawn : MonoBehaviour
 {
 
     public GameObject ItemHolder;
+    public PlayerController p1;
+    public P2Controller p2;
     public GameObject Shrink;
     public GameObject Grow;
     public GameObject Fragile;
     private GameObject newShrinkInstance;
     private GameObject newGrowthInstance;
     private GameObject newFragileInstance;
+
     // Start is called before the first frame update
     void Start()
     {

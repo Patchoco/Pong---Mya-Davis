@@ -26,7 +26,7 @@ public class P2Controller : MonoBehaviour
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
     }
 
     // Update is called once per frame
