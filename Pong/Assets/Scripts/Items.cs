@@ -9,7 +9,7 @@ public class Items : MonoBehaviour
     public GameObject FragileItem;
     public BallPhysic bP;
     public PlayerController pC;
-    public SecondPlayerController sPC;
+    public P2Controller sPC;
     public ItemSpawn iS;
 
 
@@ -27,7 +27,6 @@ public class Items : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if(collision.tag == "player1")
         {
 
@@ -39,7 +38,7 @@ public class Items : MonoBehaviour
 
             if (gameObject.tag == "shrink_item")
             {
-                pC.ifShrunk = true;
+                sPC.ifShrunk = true;
                 Destroy(this.gameObject);
             }
 
@@ -61,7 +60,7 @@ public class Items : MonoBehaviour
 
             if (gameObject.tag == "shrink_item")
             {
-                sPC.ifShrunk = true;
+                pC.ifShrunk = true;
                 Destroy(this.gameObject);
             }
 

@@ -31,7 +31,7 @@ public class BallPhysic : MonoBehaviour
 
     IEnumerator waiter(bool playerSpawn)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         if(playerSpawn)
             playernewInstance = Instantiate(p1, new Vector2(-5, 0), Quaternion.identity);

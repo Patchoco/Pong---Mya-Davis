@@ -9,6 +9,8 @@ public class P2Controller : MonoBehaviour
 
     float vertical;
     float horizontal;
+    float originalWidth = 0.5f;
+    float originalHeight = 2f;
     public bool ifEnlargened = false;
     public bool ifShrunk = false;
 
@@ -21,13 +23,8 @@ public class P2Controller : MonoBehaviour
     {
         myRB = GetComponent<Rigidbody2D>();
         zero = new Vector2(0, 0);
-        StartCoroutine(waiter());
     }
 
-    IEnumerator waiter()
-    {
-        yield return new WaitForSeconds(3);
-    }
 
     // Update is called once per frame
     void Update()
@@ -72,17 +69,33 @@ public class P2Controller : MonoBehaviour
         {
             ifShrunk = false;
             ItemLarge();
-
-
+            StartCoroutine("waiter", true);
         }
 
         if (ifShrunk == true)
         {
-            ifEnlargened = false;
             ItemSmall();
+            ifEnlargened = false;
+            StartCoroutine("waiter", true);
 
         }
 
+    }
+
+    IEnumerator waiter(bool Waiting)
+    {
+        yield return new WaitForSeconds(3);
+        if (Waiting)
+        {
+            ifEnlargened = false;
+            ifShrunk = false;
+            Vector2 scale = new Vector2(originalWidth, originalHeight);
+            transform.localScale = scale;
+        }
+        if(!Waiting)
+        {
+
+        }
     }
 
 
@@ -90,16 +103,13 @@ public class P2Controller : MonoBehaviour
     {
         Vector2 scale = new Vector2(1, 5);
         transform.localScale = scale;
-        StartCoroutine(waiter());
-        ifEnlargened = false;
+
     }
 
     public void ItemSmall()
     {
         Vector2 scale = new Vector2(1, 1);
         transform.localScale = scale;
-        StartCoroutine(waiter());
-        ifShrunk = false;
     }
 
 }
