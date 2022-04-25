@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpriteChanger : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
+    //make this one into the list?
     public Sprite Confident;
     public Sprite Sad;
     public Sprite Neutral;
